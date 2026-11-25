@@ -1,0 +1,418 @@
+---
+# Hoja de estilos principal de TecnoKurioso.
+# Jekyll la compila a /assets/main.css.
+---
+
+// =============================================================
+// 1. Variables de minima (van ANTES del @import)
+// =============================================================
+$brand-color:      #1b5fc1;
+$text-color:       #1e293b;
+$background-color: #f7f8fb;
+$grey-color:       #64748b;
+$grey-color-light: #e2e8f0;
+$grey-color-dark:  #334155;
+$base-font-family: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+$base-font-size:   17px;
+$base-line-height: 1.65;
+$spacing-unit:     30px;
+$content-width:    1080px;
+
+@import "minima";
+
+// =============================================================
+// 2. Variables propias
+// =============================================================
+$navy:        #0b1f3a;
+$navy-2:      #13325e;
+$accent:      #ff6b2c;
+$c-noticias:  #d9480f;
+$c-ia:        #6741d9;
+$c-explicado: #0c8599;
+$radius:      14px;
+$shadow:      0 1px 2px rgba(15, 23, 42, .06), 0 8px 24px rgba(15, 23, 42, .06);
+$read-width:  740px;
+
+// =============================================================
+// 3. Base
+// =============================================================
+body { -webkit-font-smoothing: antialiased; }
+
+h1, h2, h3, h4 { color: $navy; letter-spacing: -.01em; font-weight: 700; }
+
+a { text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+.k { color: $accent; }
+
+.page-content { padding: $spacing-unit * 1.2 0 $spacing-unit * 2; }
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: $accent;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .15s ease, background .15s ease;
+  &:hover { background: #e8551b; color: #fff; text-decoration: none; transform: translateY(-1px); }
+}
+
+// =============================================================
+// 4. Cabecera
+// =============================================================
+.site-header {
+  background: $navy;
+  border-top: 0;
+  border-bottom: 4px solid $accent;
+  min-height: 64px;
+
+  .header-inner { display: flex; align-items: center; justify-content: space-between; }
+
+  .site-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    float: none;
+    line-height: 64px;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -.02em;
+    &, &:visited { color: #fff; }
+    &:hover { text-decoration: none; }
+  }
+  .site-logo { display: block; border-radius: 8px; }
+
+  .site-nav {
+    float: none;
+    line-height: 64px;
+
+    .page-link {
+      color: rgba(255, 255, 255, .85);
+      font-weight: 600;
+      font-size: 16px;
+      padding: 6px 2px;
+      border-bottom: 2px solid transparent;
+      &:hover { color: #fff; text-decoration: none; border-bottom-color: rgba(255, 255, 255, .5); }
+      &.is-active { color: #fff; border-bottom-color: $accent; }
+      &:not(:last-child) { margin-right: 22px; }
+    }
+
+    .menu-icon { color: #fff; }
+
+    @include media-query($on-palm) {
+      position: absolute;
+      top: 12px;
+      right: $spacing-unit * .5;
+      background: $navy-2;
+      border: 1px solid rgba(255, 255, 255, .15);
+      line-height: 1;
+      z-index: 10;
+
+      .page-link {
+        display: block;
+        padding: 10px 14px;
+        margin: 0 !important;
+        border-bottom: 0;
+        &.is-active { color: $accent; }
+      }
+    }
+  }
+}
+
+// =============================================================
+// 5. Etiquetas de sección (chips)
+// =============================================================
+.chip {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  &:hover { text-decoration: none; color: #fff; filter: brightness(1.1); }
+  &--noticias  { background: $c-noticias; }
+  &--ia        { background: $c-ia; }
+  &--explicado { background: $c-explicado; }
+  &--lg { padding: 7px 16px; font-size: 14px; }
+}
+
+// =============================================================
+// 6. Portada
+// =============================================================
+.hero {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: $spacing-unit * 1.5;
+  padding: 48px 44px;
+  border-radius: $radius * 1.4;
+  background: radial-gradient(circle at 85% 20%, rgba(255, 107, 44, .35), transparent 45%),
+              linear-gradient(135deg, $navy 0%, $navy-2 100%);
+  color: #fff;
+
+  .hero-title { color: #fff; font-size: 40px; line-height: 1.15; margin-bottom: 14px; max-width: 760px; }
+  .hero-lead  { color: rgba(255, 255, 255, .85); font-size: 19px; max-width: 680px; }
+
+  @include media-query($on-palm) {
+    padding: 32px 22px;
+    .hero-title { font-size: 30px; }
+  }
+}
+
+.hero-kicker {
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: $accent;
+}
+
+.hero-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0 0;
+  list-style: none;
+}
+
+.section-heading {
+  font-size: 24px;
+  margin: $spacing-unit 0 $spacing-unit * .7;
+  padding-left: 12px;
+  border-left: 5px solid $accent;
+}
+
+.featured {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  overflow: hidden;
+  margin-bottom: $spacing-unit;
+  border-radius: $radius;
+  background: #fff;
+  box-shadow: $shadow;
+
+  .featured-media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .featured-body { padding: 30px 32px; }
+  .featured-title { font-size: 28px; line-height: 1.2; margin: 12px 0; a { color: $navy; } }
+  .featured-excerpt { color: $grey-color-dark; }
+
+  @include media-query($on-laptop) {
+    grid-template-columns: 1fr;
+    .featured-body { padding: 22px; }
+  }
+}
+
+.home-more { margin-top: $spacing-unit; text-align: center; color: $grey-color; }
+
+// =============================================================
+// 7. Tarjetas
+// =============================================================
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: $radius;
+  background: #fff;
+  box-shadow: $shadow;
+  transition: transform .18s ease, box-shadow .18s ease;
+
+  &:hover { transform: translateY(-3px); box-shadow: 0 2px 4px rgba(15, 23, 42, .08), 0 14px 32px rgba(15, 23, 42, .12); }
+
+  .card-media img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+  .card-body { display: flex; flex-direction: column; align-items: flex-start; flex: 1; padding: 18px 20px 20px; }
+  .card-excerpt, .card-meta { align-self: stretch; }
+  .card-title { font-size: 20px; line-height: 1.3; margin: 10px 0 8px; a { color: $navy; } }
+  .card-excerpt { flex: 1; font-size: 15px; color: $grey-color-dark; margin-bottom: 12px; }
+}
+
+.card-meta { margin: 0; font-size: 14px; color: $grey-color; }
+
+// =============================================================
+// 8. Páginas de sección y archivo
+// =============================================================
+.section-hero {
+  margin-bottom: $spacing-unit;
+  padding: 34px 36px;
+  border-radius: $radius;
+  color: #fff;
+  .page-heading { color: #fff; margin-bottom: 6px; }
+  .hero-kicker { color: rgba(255, 255, 255, .8); }
+  .section-desc { margin: 0; font-size: 18px; color: rgba(255, 255, 255, .9); }
+  &--noticias  { background: linear-gradient(135deg, $c-noticias, #a8360a); }
+  &--ia        { background: linear-gradient(135deg, $c-ia, #4b2aa8); }
+  &--explicado { background: linear-gradient(135deg, $c-explicado, #08606e); }
+}
+
+.section-count { color: $grey-color; font-weight: 600; }
+.empty { padding: 30px; border-radius: $radius; background: #fff; text-align: center; color: $grey-color; }
+
+.archive-year { margin-top: $spacing-unit; font-size: 28px; color: $accent; }
+.archive-list {
+  list-style: none;
+  margin-left: 0;
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid $grey-color-light;
+  }
+  time { min-width: 48px; font-variant-numeric: tabular-nums; color: $grey-color; font-weight: 600; }
+  a:not(.chip) { flex: 1; font-weight: 600; color: $navy; }
+}
+
+// Páginas normales (Sobre el blog, Archivo): columna de lectura
+.post:not(.h-entry), .page-content article.post { max-width: $read-width; }
+
+// =============================================================
+// 9. Entradas
+// =============================================================
+.post-header {
+  max-width: $read-width;
+  margin: 0 auto $spacing-unit;
+}
+
+.post-title {
+  margin: 14px 0 10px;
+  font-size: 42px;
+  line-height: 1.15;
+  @include media-query($on-laptop) { font-size: 32px; }
+}
+
+.post-lead { font-size: 20px; color: $grey-color-dark; margin-bottom: 10px; }
+.post-meta { color: $grey-color; font-size: 15px; }
+
+.post-hero {
+  max-width: 960px;
+  margin: 0 auto $spacing-unit * 1.3;
+  img { display: block; width: 100%; border-radius: $radius; box-shadow: $shadow; }
+  figcaption { margin-top: 8px; font-size: 14px; color: $grey-color; text-align: right; }
+}
+
+.post-content {
+  max-width: $read-width;
+  > p:first-child { margin-top: 0; }
+  margin: 0 auto;
+  font-size: 18px;
+
+  h2 { margin-top: $spacing-unit * 1.4; font-size: 28px; }
+  h3 { margin-top: $spacing-unit; font-size: 21px; }
+
+  > p:first-of-type { font-size: 20px; color: $grey-color-dark; }
+
+  img {
+    display: block;
+    margin: $spacing-unit * .8 auto 6px;
+    border: 1px solid $grey-color-light;
+    border-radius: $radius;
+    background: #fff;
+  }
+  img + em, p > img + em { display: block; text-align: center; font-size: 14px; color: $grey-color; }
+
+  table {
+    width: 100%;
+    margin-bottom: $spacing-unit;
+    border: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: $shadow;
+    font-size: 15px;
+    th { background: $navy; color: #fff; border: 0; text-align: left; }
+    td { border: 0; border-top: 1px solid $grey-color-light; background: #fff; }
+    tr:nth-child(even) td { background: #f8fafc; }
+  }
+
+  code { padding: 2px 6px; border: 0; border-radius: 6px; background: #eef2f7; font-size: 15px; }
+
+  blockquote { border-left-color: $accent; color: $grey-color-dark; font-style: normal; }
+
+  ol li::marker, ul li::marker { color: $accent; font-weight: 700; }
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: $read-width;
+  margin: $spacing-unit auto 0;
+  list-style: none;
+  li { padding: 3px 10px; border-radius: 6px; background: #e9eef6; color: $grey-color-dark; font-size: 14px; }
+}
+
+.post-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: $read-width;
+  margin: $spacing-unit auto 0;
+  a {
+    display: block;
+    padding: 14px 18px;
+    border-radius: $radius;
+    background: #fff;
+    box-shadow: $shadow;
+    color: $navy;
+    font-weight: 600;
+    &:hover { text-decoration: none; color: $brand-color; }
+    span { display: block; font-size: 13px; font-weight: 700; color: $accent; text-transform: uppercase; letter-spacing: .05em; }
+  }
+  .post-nav-next { grid-column: 2; text-align: right; }
+  @include media-query($on-palm) { grid-template-columns: 1fr; .post-nav-next { grid-column: 1; } }
+}
+
+.related { margin-top: $spacing-unit * 2; }
+
+// =============================================================
+// 10. Página 404
+// =============================================================
+.error-404 {
+  max-width: 560px;
+  margin: 40px auto;
+  text-align: center;
+  .error-code { margin: 0; font-size: 110px; font-weight: 800; line-height: 1; color: $accent; }
+}
+
+// =============================================================
+// 11. Pie de página
+// =============================================================
+.site-footer {
+  border-top: 0;
+  padding: 44px 0 20px;
+  background: $navy;
+  color: rgba(255, 255, 255, .8);
+  font-size: 15px;
+
+  a { color: #fff; }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 30px;
+    @include media-query($on-palm) { grid-template-columns: 1fr; }
+  }
+
+  .footer-brand { margin-bottom: 8px; font-size: 24px; font-weight: 800; color: #fff; }
+  .footer-heading { margin-bottom: 10px; font-size: 14px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: $accent; }
+  .footer-links { list-style: none; margin: 0; li { margin-bottom: 6px; } }
+
+  .footer-legal {
+    margin-top: 30px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, .15);
+    font-size: 13px;
+    color: rgba(255, 255, 255, .65);
+  }
+}

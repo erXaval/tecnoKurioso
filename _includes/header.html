@@ -1,0 +1,37 @@
+<header class="site-header" role="banner">
+  <div class="wrapper header-inner">
+    {%- assign default_paths = site.pages | map: "path" -%}
+    {%- assign page_paths = site.header_pages | default: default_paths -%}
+
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}" aria-label="{{ site.title }}, ir a la portada">
+      <img class="site-logo" src="{{ "/assets/img/logo.svg" | relative_url }}" alt="" width="34" height="34">
+      <span class="site-name">Tecno<span class="k">K</span>urioso</span>
+    </a>
+
+    {%- if page_paths -%}
+      <nav class="site-nav" aria-label="Menú principal">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger" aria-label="Abrir menú">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px" aria-hidden="true">
+              <path d="M0 1.5h18M0 7.5h18M0 13.5h18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          {%- for path in page_paths -%}
+            {%- assign my_page = site.pages | where: "path", path | first -%}
+            {%- if my_page.title -%}
+              {%- assign activa = false -%}
+              {%- if page.url == my_page.url or page.categories contains my_page.categoria -%}
+                {%- assign activa = true -%}
+              {%- endif -%}
+              <a class="page-link{% if activa %} is-active{% endif %}" href="{{ my_page.url | relative_url }}"{% if activa %} aria-current="page"{% endif %}>{{ my_page.menu | default: my_page.title | escape }}</a>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </nav>
+    {%- endif -%}
+  </div>
+</header>

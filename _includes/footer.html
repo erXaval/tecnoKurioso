@@ -1,0 +1,38 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper footer-grid">
+    <div class="footer-col">
+      <p class="footer-brand">Tecno<span class="k">K</span>urioso</p>
+      <p class="footer-tagline">{{ site.description | escape }}</p>
+    </div>
+
+    <div class="footer-col">
+      <h2 class="footer-heading">Secciones</h2>
+      <ul class="footer-links">
+        {%- for s in site.data.secciones -%}
+          <li><a href="{{ "/" | append: s[0] | append: "/" | relative_url }}">{{ s[1].nombre }}</a></li>
+        {%- endfor -%}
+        <li><a href="{% link archivo.md %}">Archivo</a></li>
+        <li><a href="{% link about.md %}">Sobre el blog</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h2 class="footer-heading">Sígueme</h2>
+      <ul class="footer-links">
+        <li><a href="https://github.com/{{ site.github_username }}/tecnoKurioso">Código en GitHub</a></li>
+        <li><a href="{{ "/feed.xml" | relative_url }}">Suscríbete por RSS</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrapper footer-legal">
+    <p>
+      © {{ site.time | date: "%Y" }} {{ site.author }} ·
+      Contenidos bajo licencia <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.es" rel="license">CC BY-NC 4.0</a> ·
+      Código bajo licencia <a href="https://github.com/{{ site.github_username }}/tecnoKurioso/blob/main/LICENSE">MIT</a> ·
+      Hecho con <a href="https://jekyllrb.com/">Jekyll</a> y publicado en GitHub Pages
+    </p>
+  </div>
+</footer>

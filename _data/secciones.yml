@@ -1,0 +1,15 @@
+# Secciones del blog. La clave coincide con la categoría de las entradas
+# y con el permalink de su página. Se usa para las etiquetas de color,
+# la portada y las páginas de sección.
+noticias:
+  nombre: Noticias
+  descripcion: Actualidad del sector de las telecomunicaciones, con contexto y fuentes.
+  color: noticias
+ia-telecom:
+  nombre: IA en telecom
+  descripcion: Cómo la inteligencia artificial está cambiando la forma de construir y operar las redes.
+  color: ia
+explicado:
+  nombre: Explicado fácil
+  descripcion: Tecnologías de telecomunicaciones contadas paso a paso, sin dar nada por sabido.
+  color: explicado

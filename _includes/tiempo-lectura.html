@@ -1,0 +1,7 @@
+{%- comment -%}
+  Tiempo de lectura aproximado a 200 palabras por minuto.
+  Uso: {% include tiempo-lectura.html texto=content %}
+{%- endcomment -%}
+{%- assign palabras = include.texto | strip_html | number_of_words -%}
+{%- assign minutos = palabras | divided_by: 200 | plus: 1 -%}
+<span class="tiempo-lectura">{{ minutos }} min de lectura</span>

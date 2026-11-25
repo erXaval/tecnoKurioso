@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-label="Calendario de apagado de la 2G en Francia en 2026" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<rect width="1200" height="520" fill="#ffffff"/>
+<text x="40" y="46" font-size="26" font-weight="700" fill="#0b1f3a">La 2G francesa se apaga en nueve meses</text>
+<text x="40" y="76" font-size="17" fill="#475569">Apagado de la red 2G en la Francia continental, 2026</text>
+<line x1="250.0" y1="112" x2="250.0" y2="440" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="256.0" y="106" font-size="17" fill="#64748b">mar</text>
+<line x1="341.5" y1="112" x2="341.5" y2="440" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="347.5" y="106" font-size="17" fill="#64748b">abr</text>
+<line x1="430.0" y1="112" x2="430.0" y2="440" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="436.0" y="106" font-size="17" fill="#64748b">may</text>
+<line x1="521.5" y1="112" x2="521.5" y2="440" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="527.5" y="106" font-size="17" fill="#64748b">jun</text>
+<line x1="610.0" y1="112" x2="610.0" y2="440" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="616.0" y="106" font-size="17" fill="#64748b">jul</text>
+<line x1="701.5" y1="112" x2="701.5" y2="440" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="707.5" y="106" font-size="17" fill="#64748b">ago</text>
+<line x1="793.0" y1="112" x2="793.0" y2="440" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="799.0" y="106" font-size="17" fill="#64748b">sep</text>
+<line x1="881.5" y1="112" x2="881.5" y2="440" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="887.5" y="106" font-size="17" fill="#64748b">oct</text>
+<line x1="973.0" y1="112" x2="973.0" y2="440" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="979.0" y="106" font-size="17" fill="#64748b">nov</text>
+<line x1="1061.5" y1="112" x2="1061.5" y2="440" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="1067.5" y="106" font-size="17" fill="#64748b">dic</text>
+<text x="40" y="156" font-size="20" font-weight="700" fill="#0b1f3a">Orange</text>
+<text x="40" y="246" font-size="20" font-weight="700" fill="#0b1f3a">SFR</text>
+<text x="40" y="336" font-size="20" font-weight="700" fill="#0b1f3a">Bouygues Telecom</text>
+<text x="40" y="426" font-size="20" font-weight="700" fill="#0b1f3a">Free Mobile</text>
+<path d="M338.5 137 l13 13 l-13 13 l-13 -13z" fill="#f76707"/>
+<text x="356.5" y="155" font-size="17" fill="#334155">31/03 · primeras ciudades</text>
+<rect x="863.8" y="136" width="286.2" height="28" rx="14" fill="#f76707"/>
+<text x="863.8" y="128" font-size="17" fill="#334155">generalización hasta fin de año</text>
+<rect x="1014.3" y="226" width="88.5" height="28" rx="14" fill="#e03131"/>
+<text x="1004.3" y="245" font-size="17" fill="#334155" text-anchor="end">desde el 15/11</text>
+<path d="M1014.3 317 l13 13 l-13 13 l-13 -13z" fill="#1971c2"/>
+<rect x="1061.5" y="316" width="41.3" height="28" rx="14" fill="#1971c2"/>
+<text x="996.3" y="335" font-size="17" fill="#334155" text-anchor="end">15/11 · 4 ciudades · resto 1-15/12</text>
+<text x="250" y="426" font-size="15" fill="#64748b" font-style="italic">Sin red 2G propia</text>
+<line x1="1102.8" y1="118" x2="1102.8" y2="440" stroke="#0b1f3a" stroke-width="2" stroke-dasharray="5 5"/>
+<text x="1132.8" y="474" font-size="18" font-weight="700" fill="#0b1f3a" text-anchor="end">15/12 · fin de la 2G de SFR y Bouygues</text>
+</svg>

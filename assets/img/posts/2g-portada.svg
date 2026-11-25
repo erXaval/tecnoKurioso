@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Icono de cobertura 2G tachado">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5c1a1a"/><stop offset="1" stop-color="#0b1f3a"/></linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity=".1" fill="#ffffff" font-family="Segoe UI, Roboto, Arial, sans-serif" font-weight="800" font-size="120">
+    <text x="60" y="160">3G</text><text x="980" y="170">4G</text><text x="980" y="610">5G</text><text x="60" y="610">4G</text>
+  </g>
+  <!-- barras de cobertura -->
+  <g fill="#ffffff">
+    <rect x="390" y="430" width="70" height="80" rx="10"/>
+    <rect x="490" y="360" width="70" height="150" rx="10" opacity=".85"/>
+    <rect x="590" y="290" width="70" height="220" rx="10" opacity=".65"/>
+    <rect x="690" y="220" width="70" height="290" rx="10" opacity=".45"/>
+  </g>
+  <text x="600" y="190" text-anchor="middle" font-family="Segoe UI, Roboto, Arial, sans-serif" font-size="150" font-weight="800" fill="#ffffff">2G</text>
+  <line x1="350" y1="560" x2="850" y2="110" stroke="#ff6b2c" stroke-width="26" stroke-linecap="round"/>
+  <text x="600" y="625" text-anchor="middle" font-family="Segoe UI, Roboto, Arial, sans-serif" font-size="28" font-weight="700" fill="#ffd8a8" letter-spacing="4">FIN DE LA SEGUNDA GENERACIÓN</text>
+</svg>

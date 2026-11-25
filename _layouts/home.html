@@ -1,0 +1,55 @@
+---
+layout: default
+---
+<div class="home">
+
+  <section class="hero">
+    <p class="hero-kicker">Blog de telecomunicaciones</p>
+    <h1 class="hero-title">{{ site.tagline }}</h1>
+    <p class="hero-lead">{{ site.description }}</p>
+    <ul class="hero-sections">
+      {%- for s in site.data.secciones -%}
+        <li><a class="chip chip--{{ s[1].color }} chip--lg" href="{{ "/" | append: s[0] | append: "/" | relative_url }}">{{ s[1].nombre }}</a></li>
+      {%- endfor -%}
+    </ul>
+  </section>
+
+  {{ content }}
+
+  {%- if site.posts.size > 0 -%}
+    {%- assign destacada = site.posts.first -%}
+    <h2 class="section-heading">Lo último</h2>
+
+    <article class="featured">
+      {%- if destacada.image -%}
+      <a class="featured-media" href="{{ destacada.url | relative_url }}" tabindex="-1" aria-hidden="true">
+        <img src="{{ destacada.image | relative_url }}" alt="">
+      </a>
+      {%- endif -%}
+      <div class="featured-body">
+        {% include chip-seccion.html categoria=destacada.categories.first %}
+        <h3 class="featured-title"><a href="{{ destacada.url | relative_url }}">{{ destacada.title | escape }}</a></h3>
+        <p class="featured-excerpt">{{ destacada.excerpt | strip_html | normalize_whitespace }}</p>
+        <p class="card-meta">
+          <time datetime="{{ destacada.date | date_to_xmlschema }}">{{ destacada.date | date: site.minima.date_format }}</time>
+          · {% include tiempo-lectura.html texto=destacada.content %}
+        </p>
+        <a class="btn" href="{{ destacada.url | relative_url }}">Leer el artículo</a>
+      </div>
+    </article>
+
+    {%- if site.posts.size > 1 -%}
+    <div class="card-grid">
+      {%- for post in site.posts offset: 1 limit: 6 -%}
+        {% include post-card.html post=post %}
+      {%- endfor -%}
+    </div>
+    {%- endif -%}
+
+    <p class="home-more">
+      <a href="{% link archivo.md %}">Ver todas las entradas</a> ·
+      <a href="{{ "/feed.xml" | relative_url }}">Suscríbete por RSS</a>
+    </p>
+  {%- endif -%}
+
+</div>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Móvil con chip eSIM y código QR">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b3a46"/><stop offset="1" stop-color="#0b1f3a"/></linearGradient>
+    <linearGradient id="chip" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd8a8"/><stop offset="1" stop-color="#f59f00"/></linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity=".12" stroke="#ffffff" fill="none">
+    <circle cx="600" cy="338" r="180"/><circle cx="600" cy="338" r="260"/><circle cx="600" cy="338" r="340"/><circle cx="600" cy="338" r="420"/>
+  </g>
+  <!-- móvil -->
+  <rect x="470" y="110" width="260" height="460" rx="38" fill="#10273f" stroke="#7fd3dd" stroke-width="6"/>
+  <rect x="492" y="150" width="216" height="370" rx="14" fill="#0e3b4f"/>
+  <rect x="565" y="126" width="70" height="10" rx="5" fill="#7fd3dd" opacity=".6"/>
+  <!-- chip -->
+  <rect x="540" y="250" width="120" height="96" rx="14" fill="url(#chip)"/>
+  <g stroke="#b35c00" stroke-width="4" fill="none" opacity=".75">
+    <path d="M540 282h40M540 314h40M620 282h40M620 314h40M600 250v28M600 318v28"/>
+    <rect x="580" y="278" width="40" height="40" rx="6"/>
+  </g>
+  <text x="600" y="395" text-anchor="middle" font-family="Segoe UI, Roboto, Arial, sans-serif" font-size="34" font-weight="700" fill="#ffffff">eSIM</text>
+  <text x="600" y="430" text-anchor="middle" font-family="Segoe UI, Roboto, Arial, sans-serif" font-size="20" fill="#7fd3dd">perfil instalado</text>
+  <!-- QR -->
+  <g transform="translate(820 210)">
+    <rect width="200" height="200" rx="18" fill="#ffffff"/>
+    <g fill="#0b1f3a">
+      <rect x="20" y="20" width="52" height="52" rx="6"/><rect x="128" y="20" width="52" height="52" rx="6"/><rect x="20" y="128" width="52" height="52" rx="6"/>
+      <rect x="88" y="24" width="16" height="16"/><rect x="88" y="56" width="16" height="16"/><rect x="88" y="92" width="16" height="16"/>
+      <rect x="24" y="92" width="16" height="16"/><rect x="56" y="92" width="16" height="16"/><rect x="124" y="92" width="16" height="16"/>
+      <rect x="160" y="92" width="16" height="16"/><rect x="92" y="128" width="16" height="16"/><rect x="128" y="128" width="16" height="16"/>
+      <rect x="160" y="140" width="16" height="16"/><rect x="104" y="160" width="16" height="16"/><rect x="140" y="164" width="16" height="16"/>
+    </g>
+    <g fill="#ffffff"><rect x="32" y="32" width="28" height="28" rx="4"/><rect x="140" y="32" width="28" height="28" rx="4"/><rect x="32" y="140" width="28" height="28" rx="4"/></g>
+    <g fill="#0b1f3a"><rect x="38" y="38" width="16" height="16" rx="2"/><rect x="146" y="38" width="16" height="16" rx="2"/><rect x="38" y="146" width="16" height="16" rx="2"/></g>
+  </g>
+  <path d="M810 310 C 760 310, 760 298, 712 298" fill="none" stroke="#ff6b2c" stroke-width="6" stroke-dasharray="4 14" stroke-linecap="round"/>
+  <!-- nube SM-DP+ -->
+  <g transform="translate(130 230)">
+    <path d="M70 120h170a50 50 0 0 0 0-100 70 70 0 0 0-132-10A55 55 0 0 0 70 120z" fill="#13b5a6" opacity=".9"/>
+    <text x="150" y="92" text-anchor="middle" font-family="Segoe UI, Roboto, Arial, sans-serif" font-size="28" font-weight="700" fill="#06252b">SM-DP+</text>
+  </g>
+  <path d="M400 300 C 440 300, 440 298, 488 298" fill="none" stroke="#13b5a6" stroke-width="6" stroke-dasharray="4 14" stroke-linecap="round"/>
+</svg>

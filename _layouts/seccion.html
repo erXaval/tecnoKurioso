@@ -1,0 +1,28 @@
+---
+layout: default
+---
+{%- comment -%}
+  Página de sección: lista las entradas cuya categoría coincide con
+  `page.categoria`. Nombre y descripción salen de _data/secciones.yml.
+{%- endcomment -%}
+{%- assign s = site.data.secciones[page.categoria] -%}
+{%- assign entradas = site.categories[page.categoria] -%}
+
+<section class="section-hero section-hero--{{ s.color }}">
+  <p class="hero-kicker">Sección</p>
+  <h1 class="page-heading">{{ s.nombre | default: page.title }}</h1>
+  <p class="section-desc">{{ s.descripcion }}</p>
+</section>
+
+{{ content }}
+
+{%- if entradas.size > 0 -%}
+  <p class="section-count">{{ entradas.size }} {% if entradas.size == 1 %}entrada{% else %}entradas{% endif %}</p>
+  <div class="card-grid">
+    {%- for post in entradas -%}
+      {% include post-card.html post=post %}
+    {%- endfor -%}
+  </div>
+{%- else -%}
+  <p class="empty">Todavía no hay entradas en esta sección. ¡Vuelve pronto!</p>
+{%- endif -%}

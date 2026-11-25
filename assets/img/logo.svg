@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Logotipo de TecnoKurioso">
+  <rect width="64" height="64" rx="14" fill="#0b1f3a"/>
+  <path d="M18 14v36M18 33l17-19M24 27l13 23" fill="none" stroke="#ff6b2c" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M42 22a10 10 0 0 1 0 14M47 17a17 17 0 0 1 0 24" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" opacity=".9"/>
+</svg>

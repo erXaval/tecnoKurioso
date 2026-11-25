@@ -1,0 +1,8 @@
+{%- comment -%}
+  Etiqueta de color con el nombre de la sección de una entrada.
+  Uso: {% include chip-seccion.html categoria=post.categories.first %}
+{%- endcomment -%}
+{%- assign s = site.data.secciones[include.categoria] -%}
+{%- if s -%}
+<a class="chip chip--{{ s.color }}" href="{{ "/" | append: include.categoria | append: "/" | relative_url }}">{{ s.nombre }}</a>
+{%- endif -%}

@@ -1,0 +1,57 @@
+---
+layout: default
+---
+{%- assign date_format = site.minima.date_format | default: "%d/%m/%Y" -%}
+{%- assign categoria = page.categories.first -%}
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    {% include chip-seccion.html categoria=categoria %}
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: date_format }}</time>
+      {%- if page.author %} · <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>{% endif %}
+      · {% include tiempo-lectura.html texto=content %}
+    </p>
+  </header>
+
+  {%- if page.image -%}
+  <figure class="post-hero">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title | escape }}">
+    {%- if page.image_caption -%}<figcaption>{{ page.image_caption }}</figcaption>{%- endif -%}
+  </figure>
+  {%- endif -%}
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  {%- if page.tags.size > 0 -%}
+  <ul class="post-tags" aria-label="Etiquetas">
+    {%- for tag in page.tags -%}<li>#{{ tag }}</li>{%- endfor -%}
+  </ul>
+  {%- endif -%}
+
+  <nav class="post-nav" aria-label="Más entradas">
+    {%- if page.previous -%}
+      <a class="post-nav-prev" href="{{ page.previous.url | relative_url }}"><span>← Anterior</span>{{ page.previous.title | escape }}</a>
+    {%- endif -%}
+    {%- if page.next -%}
+      <a class="post-nav-next" href="{{ page.next.url | relative_url }}"><span>Siguiente →</span>{{ page.next.title | escape }}</a>
+    {%- endif -%}
+  </nav>
+
+  {%- assign relacionadas = site.categories[categoria] | where_exp: "p", "p.url != page.url" -%}
+  {%- if relacionadas.size > 0 -%}
+  <section class="related">
+    <h2 class="section-heading">Más en {{ site.data.secciones[categoria].nombre | default: categoria }}</h2>
+    <div class="card-grid">
+      {%- for p in relacionadas limit: 3 -%}
+        {% include post-card.html post=p %}
+      {%- endfor -%}
+    </div>
+  </section>
+  {%- endif -%}
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>
